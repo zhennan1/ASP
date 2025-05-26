@@ -9,20 +9,17 @@ This repository is the official implementation for the paper: **SAFEPATH: Preven
 </p>
 
 ## Introduction
-<img src="file/Overview.png" alt="Overview" width="600"/>
+<img src="file/Overview.png" alt="Overview"/>
 
-SAFEPATH is a simple yet effective safety alignment method for Large Reasoning Models (LRMs). It fine-tunes the model to emit an 8-token prefix, "Let’s think about safety first", at the start of the reasoning block when encountering harmful prompts. Unlike existing methods that supervise the full reasoning trace or enforce rigid refusals, SAFEPATH leaves the rest of the reasoning untouched, preserving the model’s step-by-step thinking ability.
+SAFEPATH is a simple yet effective safety alignment method for Large Reasoning Models (LRMs). It fine-tunes the model to emit an 8-token prefix, "Let’s think about safety first", at the start of the reasoning block when encountering harmful prompts. Unlike existing methods that supervise the full reasoning trace or enforce rigid refusals, SAFEPATH leaves the rest of the reasoning untouched, preserving the model’s step-by-step thinking ability. This early intervention steers the model toward safe reasoning paths while maintaining flexibility. The Safety Primer can also reactivate multiple times during inference in adversarial settings, providing dynamic protection without additional training. 
 
+<img src="file/Results.png" alt="Results"/>
 
-<img src="file/Results.png" alt="Results" width="600"/>
-
-This early intervention steers the model toward safe reasoning paths while maintaining flexibility. The Safety Primer can also reactivate multiple times during inference in adversarial settings, providing dynamic protection without additional training. SAFEPATH achieves strong safety, robust defense against jailbreaks, and high reasoning accuracy, all with drastically reduced computational cost.
-
-SAFEPATH provides a practical solution for aligning reasoning models with safety goals in real-world deployments.
+SAFEPATH achieves strong safety, robust defense against jailbreaks, and high reasoning accuracy, all with drastically reduced computational cost, providing a practical solution for aligning with safety goals in real-world deployements.
 
 ---
 
-## 📦 Environment Setup
+## Environment Setup
 
 1. Create a conda environment:
    ```bash
@@ -37,9 +34,7 @@ SAFEPATH provides a practical solution for aligning reasoning models with safety
    pip install -e .[math,vllm]
    ```
 
----
-
-## 🔧 SAFEPATH Training
+## SAFEPATH Training
 
 All training scripts are located in `script/safety_alignment/`. \
 You can add SAFEPATH on different models as follows:
@@ -54,11 +49,9 @@ bash script/safety_alignment/safepath_qwen_train.sh
 bash script/safety_alignment/safepath_llama_train.sh
 ```
 
-We plan to upload model weights soon.
+All models are upload in  <a href="https://huggingface.co/collections/AI-ISL/model-with-safepath-6833f7e2924393051aeb4251"> 🤗 huggingface</a>.
 
----
-
-## 📊 Evaluation on BeaverTails
+## Evaluation on BeaverTails
 
 To evaluate SAFEPATH on the BeaverTails benchmark:
 ```bash
@@ -67,11 +60,8 @@ bash script/safety_alignment/eval.sh
 
 You can change the model name in the script to evaluate other checkpoints.
 
----
-
-## 🙏 Acknowledgment
+## Acknowledgment
 
 This repository builds on [Safety-Tax](https://github.com/git-disl/safety-tax).  
 Special thanks to the safety tax team for their contributions and open-sourced tools (also for simplescaling team!).
 
----
