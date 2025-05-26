@@ -1,6 +1,14 @@
 # SAFEPATH: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment
+This repository is the official implementation for the paper: **SAFEPATH: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment**
 
-This repository contains the code for **SAFEPATH**, a method for aligning Large Reasoning Models (LRMs) against harmful reasoning paths by injecting safety signals early in the reasoning process.
+
+<p align="center">
+  <a href="https://ai-isl.github.io/safepath"> 🏠 Homepage</a> |
+  <a href="https://arxiv.org/html/2505.14667v1"> 📜 Paper</a> | 
+  <a href="https://huggingface.co/collections/AI-ISL/model-with-safepath-6833f7e2924393051aeb4251"> 🤗 Models</a>
+</p>
+
+## Introduction
 
 ---
 
