@@ -1,14 +1,24 @@
 # SAFEPATH: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment
-This repository is the official implementation for the paper: **SAFEPATH: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment**
+This repository is the official implementation for the paper: **SAFEPATH: Preventing Harmful Reasoning in Chain-of-Thought via Early Alignment**.
 
 
 <p align="center">
   <a href="https://ai-isl.github.io/safepath"> 🏠 Homepage</a> |
   <a href="https://arxiv.org/html/2505.14667v1"> 📜 Paper</a> | 
-  <a href="https://huggingface.co/collections/AI-ISL/model-with-safepath-6833f7e2924393051aeb4251"> 🤗 Models</a>
+  <a href="https://huggingface.co/collections/AI-ISL/model-with-safepath-6833f7e2924393051aeb4251"> 🤗 Models & Dataset</a>
 </p>
 
 ## Introduction
+<img src="file/Overview.png" alt="Overview" width="600"/>
+
+SAFEPATH is a simple yet effective safety alignment method for Large Reasoning Models (LRMs). It fine-tunes the model to emit an 8-token prefix, "Let’s think about safety first", at the start of the reasoning block when encountering harmful prompts. Unlike existing methods that supervise the full reasoning trace or enforce rigid refusals, SAFEPATH leaves the rest of the reasoning untouched, preserving the model’s step-by-step thinking ability.
+
+
+<img src="file/Results.png" alt="Results" width="600"/>
+
+This early intervention steers the model toward safe reasoning paths while maintaining flexibility. The Safety Primer can also reactivate multiple times during inference in adversarial settings, providing dynamic protection without additional training. SAFEPATH achieves strong safety, robust defense against jailbreaks, and high reasoning accuracy, all with drastically reduced computational cost.
+
+SAFEPATH provides a practical solution for aligning reasoning models with safety goals in real-world deployments.
 
 ---
 
